@@ -11,7 +11,7 @@ namespace MemoryGame
         private int numero;
         private string cor, naipe;
 
-        public Cards(int Numero, string Cor, string Naipe)
+        public Cards(int numero, string cor, string naipe)
         {
             this.numero = Numero;
             this.cor = Cor;
