@@ -13,9 +13,9 @@ namespace MemoryGame
 
         public Cards(int numero, string cor, string naipe)
         {
-            this.numero = Numero;
-            this.cor = Cor;
-            this.naipe = Naipe;
+            this.numero = numero;
+            this.cor = cor;
+            this.naipe = naipe;
         }
     }
 }
