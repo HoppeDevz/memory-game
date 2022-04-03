@@ -1,5 +1,9 @@
-﻿using MemoryGamePlayerUtils;
+﻿using System;
+using System.Threading;
+
+using MemoryGamePlayerUtils;
 using MemoryGameUtils;
+using MemoryGameLog;
 
 namespace MemoryGameCore
 {
@@ -20,11 +24,34 @@ namespace MemoryGameCore
                 PlayerUtils.createPlayerDatabase();
         }
 
-        public void initializeGameCore()
+        private void verifyGameSettingsFile()
         {
+
+            if (!GameUtils.gameSettingsFileExist()) { 
+
+                GameUtils.createGameSettingsFile();
+                GameUtils.setDefaultSettings();
+            }
+        }
+
+        public bool initializeGameCore()
+        {
+
+            GameLog.log("Verifying game files...");
 
             this.verifyGameApplicationData();
             this.verifyPlayerDatabaseFile();
+            this.verifyGameSettingsFile();
+
+            Thread.Sleep(3500);
+
+            GameLog.log("Game loaded!");
+
+            Thread.Sleep(500);
+
+            Console.Clear();
+
+            return true;
         }
     }
 }
