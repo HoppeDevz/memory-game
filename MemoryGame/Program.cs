@@ -126,6 +126,8 @@ namespace MemoryGame
                     Console.WriteLine();
 
                     int option = 0;
+
+                    GameLog.log("Escolha uma opção: ");
                     option = int.Parse(Console.ReadLine());
 
                     switch (option) {
@@ -133,8 +135,18 @@ namespace MemoryGame
                         case 1:
                         {
 
-                            Console.WriteLine("Digite o novo valor: ");
+                            Console.Write("Digite o novo valor: ");
                             int newVal = int.Parse(Console.ReadLine());
+
+                            if (newVal % 2 > 0)
+                            {
+
+                                Console.WriteLine();
+                                GameLog.log("O valor deve ser de grandeza par...");
+                                GameLog.log("Pressione qualquer tecla para continuar...");
+                                Console.ReadKey();
+                                gameSettingsOption();
+                            }
 
                             MemoryGameUtils.GameUtils.setMatrixSize(newVal);
 
