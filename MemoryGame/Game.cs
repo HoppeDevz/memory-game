@@ -435,6 +435,7 @@ namespace MemoryGamePlay
 
                         bool inserted = setFirstCardSelected(cardRowPos, cardColPos);
 
+                        Console.Beep();
                         currentGameState++;
                         continue;
                     } 
@@ -459,6 +460,7 @@ namespace MemoryGamePlay
 
                         setSecondCardSelected(cardRowPos, cardColPos);
 
+                        Console.Beep();
                         currentGameState++;
                         continue;
                     }
